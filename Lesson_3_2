@@ -14,6 +14,7 @@ def check3(x):
         print(x)
 
 
+print("Задание №2: Переписать задание из первого урока переведя все проверки в функции")
 x = int(input("Введите число от 1 до 9: "))
 
 if 1 <= x <= 3:
@@ -28,3 +29,35 @@ elif 7 <= x <= 9:
 
 else:
     print("Ошибка ввода")
+
+print(
+    "Задание №3: Напишите функцию, которая разбивает введённую строку на слова и выводит по очереди само слова тире ее длина."
+)
+
+
+def stringbreak(s):
+    words = s.split()
+    for i in range(len(words)):
+        print(words[i], " - ", len(words[i]))
+
+
+s = input("Введите строку: ")
+stringbreak(s)
+
+print("Задание №4")
+
+
+def st(*args):
+    if not args:
+        return []
+    else:
+        a = []
+        a.append(args[0] ** 1)
+        for i in range(len(args) - 1):
+            a.append(args[i + 1] ** args[i])
+        return a
+
+
+b = input("Введите числа через пробел: ").split()
+b = [int(x) for x in b]
+print(st(*b))
